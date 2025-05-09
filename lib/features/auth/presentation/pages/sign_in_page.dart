@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:graduation/core/utils/colors.dart';
+import 'package:graduation/features/home/presentation/manager/get_categories_cubit/cubit_get_categories.dart';
+import 'package:graduation/features/home/presentation/manager/get_product_cubit/cubit_get_product.dart';
 import 'package:graduation/features/home/presentation/pages/home_page.dart';
 
 class LogInScreen extends StatelessWidget {
@@ -100,7 +103,10 @@ class LogInScreen extends StatelessWidget {
                     width: 10,
                   ),
                   ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        BlocProvider.of<CubitGetCategories>(context)
+                            .CategoriesInStore();
+                      },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: SvgPicture.asset(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:graduation/features/home/presentation/pages/home_page.dart';
+import 'package:graduation/features/home/data/Models/store_product_get_category/store_product_get_category.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({super.key, required this.category});
@@ -18,14 +18,14 @@ class CategoryCard extends StatelessWidget {
           //ممكن احط ايمدج من الاسيتست
           image: DecorationImage(
             fit: BoxFit.fill,
-            image: AssetImage(category.Image),
+            image: AssetImage(category.imgUrl.toString()),
           ),
           color: Colors.yellow,
           borderRadius: BorderRadius.circular(16),
         ),
         child: Text(
           textAlign: TextAlign.center,
-          category.CategoryName,
+          category.name.toString(),
           style: const TextStyle(color: Colors.white, fontSize: 22),
         ),
       ),

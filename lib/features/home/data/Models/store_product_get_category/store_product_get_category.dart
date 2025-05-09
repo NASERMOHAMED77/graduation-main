@@ -1,36 +1,24 @@
-import 'package:equatable/equatable.dart';
+class CategoryModel {
+  int? id;
+  String? name;
+  String? imgUrl;
+  int? storeId;
 
-class StoreProductGetCategory extends Equatable {
-	final int? id;
-	final String? name;
-	final String? imgUrl;
-	final int? storeId;
+  CategoryModel({this.id, this.name, this.imgUrl, this.storeId});
 
-	const StoreProductGetCategory({
-		this.id, 
-		this.name, 
-		this.imgUrl, 
-		this.storeId, 
-	});
+  CategoryModel.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    name = json['name'];
+    imgUrl = json['imgUrl'];
+    storeId = json['storeId'];
+  }
 
-	factory StoreProductGetCategory.fromJson(Map<String, dynamic> json) {
-		return StoreProductGetCategory(
-			id: json['id'] as int?,
-			name: json['name'] as String?,
-			imgUrl: json['imgUrl'] as String?,
-			storeId: json['storeId'] as int?,
-		);
-	}
-
-
-
-	Map<String, dynamic> toJson() => {
-				'id': id,
-				'name': name,
-				'imgUrl': imgUrl,
-				'storeId': storeId,
-			};
-
-	@override
-	List<Object?> get props => [id, name, imgUrl, storeId];
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['name'] = this.name;
+    data['imgUrl'] = this.imgUrl;
+    data['storeId'] = this.storeId;
+    return data;
+  }
 }

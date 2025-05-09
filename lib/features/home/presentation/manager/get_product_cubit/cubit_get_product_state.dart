@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:graduation/features/home/data/Models/product_in_store/product_in_store.dart';
+import 'package:graduation/features/home/data/Models/product_model.dart';
 
 abstract class StoreStates extends Equatable {
   const StoreStates();
@@ -11,7 +11,7 @@ abstract class StoreStates extends Equatable {
 class GetProductsIntial extends StoreStates {}
 
 class GetProductsSucess extends StoreStates {
-  final List<ProductInStore> product;
+  final List<ProductModel> product;
   const GetProductsSucess({required this.product});
 }
 
